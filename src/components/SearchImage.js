@@ -31,8 +31,8 @@ const SearchImage = () => {
         <div className=''>
           <form  onSubmit={onSubmit}>
             <div className="">
-                    <input onChange={(e)=>setText(e.target.value)}className="" type="text" placeholder="Search Image Term..." />
-                    <button className="btn btn-secondary btn-sm btn-rounded" style={{marginLeft:"20px"}} type="submit">
+                    <input onChange={(e)=>setText(e.target.value)}className="searchBox" type="text" placeholder="Search Image Term..." />
+                    <button className="btn btn-secondary btn-sm rounded-pill rounded-lg" style={{marginLeft:"20px",paddingRight:"20px",paddingLeft:"20px"}} type="submit">
           Search
           </button>
           </div>
