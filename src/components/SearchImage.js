@@ -3,14 +3,16 @@ import React, { useState,useCallback,useEffect } from 'react'
 const API_KEY = process.env.REACT_APP_PIXABAY_API_KEY
 const url = `https://pixabay.com/api/?key=${API_KEY}`
 
-const SearchImage = () => {
+const SearchImage = ({dataDisp}) => {
     const [text,setText]=useState('')
     const [term, setTerm] = useState('')
     const fetchImages = useCallback(async () => {
          try {
           const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true`);
           const data = await response.json();
-          //console.log("The data:", data)
+           console.log("The data:", data)
+           const {hits}=data
+           dataDisp(hits)
         }
         catch (error) {
           console.log(error)
