@@ -8,7 +8,7 @@ const SearchImage = ({dataDisp}) => {
     const [term, setTerm] = useState('')
     const fetchImages = useCallback(async () => {
          try {
-          const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true`);
+          const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true&safesearch=true`);
           const data = await response.json();
            console.log("The data:", data)
            const {hits}=data
