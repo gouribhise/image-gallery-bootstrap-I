@@ -1,29 +1,29 @@
 import React,{useState} from 'react'
 
 
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import { FaComment, FaCommentAlt, FaCommentDollar, FaCommentMedical, FaComments, FaCommentSlash, FaEdit, FaRegComment, FaRegThumbsUp, FaThumbsUp, FaTrash } from 'react-icons/fa'
 const DispImage = ({data}) => {
   console.log("what is data",data)
  
-    const showInfo = () => {
-        console.log("hovered")
-        
-    }
+  
     return (
         <>
-            {data.map(image => (
-        
-         <>
+        {data.map((image) => {
+       
+ 
+         return( <div className="col-md-3 img-container">
+            <img src={image.webformatURL} alt="" style={{ width: "300px", height: "300px", marginTop: "20px" }} />
+           <div class="text-block">
              
-           <div className="col-md-3 img-container">
-             <img onMouseOver={() =>showInfo()} src={image.webformatURL} alt="" style={{ width: "300px", height: "300px", marginTop: "20px" }} />
-             <div class="text-block">
-             <p>{image.tags}</p>  
-             </div>
+             <FaRegThumbsUp /> {image.likes}  <FaRegComment /> {image.comments}
+              <p>
+                      
+                {image.tags}</p>
+            </div>
           
-         </div>
-          </>
-       ))}
+          </div>)
+      
+        })}
            
         </>
     )
