@@ -32,19 +32,30 @@ code {
   padding: 5px;
   text-indent: 20px;
 }
+.img-container {
+  position: relative;
+}
 
 .text-block {
   position: absolute;
-  bottom: 0px;
-  left: 72px;
-  opacity: 0;
-  background-color: gray;
-  width: 67%;
-  text-align: cetner;
+  bottom: 1px;
+  left: 96px;
+  width: 65%;
+  margin: 0 auto;
+  max-width: 700px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 3px;
 }
 .text-block:hover {
   opacity: 1;
+
   background-color: rgba(128, 128, 128, 0.5);
   color: white;
   font-size: 1vw;
+  margin: 0 auto;
+  max-width: 700px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 3px;
 }

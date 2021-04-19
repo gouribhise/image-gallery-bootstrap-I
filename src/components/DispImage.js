@@ -11,8 +11,8 @@ const DispImage = ({data}) => {
         {data.map((image) => {
        
  
-         return( <div className="col-md-3 img-container">
-            <img src={image.webformatURL} alt="" style={{ width: "300px", height: "300px", marginTop: "20px" }} />
+         return( <div className="col-md-3">
+            <img src={image.webformatURL} alt="" style={{ width: "350px", height: "300px", marginTop: "20px" }} />
            <div class="text-block">
              
              <FaRegThumbsUp /> {image.likes}  <FaRegComment /> {image.comments}
