@@ -32,3 +32,17 @@ code {
   padding: 5px;
   text-indent: 20px;
 }
+.img-container {
+  position: relative;
+  font-family: Arial;
+}
+.text-block {
+  position: absolute;
+  bottom: 8px;
+  left: 56px;
+  opacity: 0;
+  background-color: gray;
+}
+.text-block:hover {
+  opacity: 1;
+}

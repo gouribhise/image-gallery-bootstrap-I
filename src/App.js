@@ -21,7 +21,7 @@ function App() {
         </div>
        </div>
        <div className="row">
-         <DispImage data={data} index={data.index} />
+         <DispImage data={data}/>
        </div>
     
      </div>
