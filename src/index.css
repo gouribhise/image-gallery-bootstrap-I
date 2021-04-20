@@ -15,6 +15,7 @@ code {
 }
 
 /**** additional css *****/
+
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: url("https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_1280.jpg");
@@ -25,8 +26,14 @@ code {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  padding-bottom: 30px;
+
+  padding-bottom: 20px;
+  padding-top: 30px;
+  height: 250px;
+}
+.hero-text {
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 .searchBox {
   border-radius: 40px;
@@ -61,4 +68,12 @@ code {
   width: 90%;
   left: 24px;
   background-color: #000;
+}
+
+.takenBy {
+  margin-left: -50%;
+}
+.imgFrame {
+  padding: 12px;
+  border: 20px inset pink;
 }

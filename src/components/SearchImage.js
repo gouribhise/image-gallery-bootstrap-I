@@ -6,15 +6,18 @@ const url = `https://pixabay.com/api/?key=${API_KEY}`
 
 const SearchImage = ({dataDisp,dispImgs}) => {
     const [text,setText]=useState('')
-    const [term, setTerm] = useState('')
+   const [term, setTerm] = useState('')
+   const [data, setData] = useState([])
+     dataDisp(data);
     const fetchImages = useCallback(async () => {
          try {
           const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true&safesearch=true`);
           const data = await response.json();
            console.log("The data:", data)
-           const {hits}=data
-           dataDisp(hits)
-        }
+           const { hits } = data
+           //get hits and store inside setdat which will send it back to dataDisp
+           setData(hits)
+         }
         catch (error) {
           console.log(error)
         }

@@ -5,7 +5,7 @@ import Header from './components/Header'
 import SearchImage from './components/SearchImage'
 import DispImages from './components/DispImages'
 import ShowImg from './components/ShowImg'
-
+ 
 function App() {
   //this data will come from searchImage component
   //which we will use to display images in other component
@@ -24,15 +24,16 @@ function App() {
    return (
     <div className="App">
       <Header />
-      <div class="hero-image">
-        <div class="hero-text">
-           <h5>Stunning free images for your next project</h5>
+      <div className="hero-image">
+        <div className="hero-text">
+           <p>Stunning free images for your next project</p>
+           </div>
            {/* get data and store it in setData*/}
            {/*setisclick to false to load images again*/}
            <SearchImage
                 dataDisp={(data)=>setData(data)}
                 dispImgs={(val)=>setIsClick(val)}/>
-        </div>
+      
       </div>
       {/*if image is clicked display big image else
         show all images in grid*/}
@@ -48,8 +49,16 @@ function App() {
           </div>
          :
          <div className="row">
+
          {/* send data to dispimages get the clicked image and set isclick to true*/}
-           <DispImages data={data} imageId={(id)=>setImgId(id)} getClick={(val)=>setIsClick(val)}/>
+           {data.length >0 ?
+                     <DispImages data={data} imageId={(id) => setImgId(id)} getClick={(val) => setIsClick(val)} />
+             :
+             <div className="alert alert-warning offset-5" style={{marginTop:"30px"}}>
+              <h4 className="alert-heading">Warning!</h4>
+             <p className="mb-0">No images found</p>
+           </div>
+          }
          </div>
       }
 

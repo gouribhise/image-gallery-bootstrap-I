@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { FaRegComment, FaRegThumbsUp } from 'react-icons/fa'
 
 const DispImages = ({data,imageId,getClick}) => {
