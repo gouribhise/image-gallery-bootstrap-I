@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-import { FaComment, FaCommentAlt, FaCommentDollar, FaCommentMedical, FaComments, FaCommentSlash, FaEdit, FaRegComment, FaRegThumbsUp, FaThumbsUp, FaTrash } from 'react-icons/fa'
+import { FaRegComment, FaRegThumbsUp } from 'react-icons/fa'
 const DispImage = ({data}) => {
   console.log("what is data",data)
  
@@ -11,15 +11,17 @@ const DispImage = ({data}) => {
         {data.map((image) => {
        
  
-         return( <div className="col-md-3">
-            <img src={image.webformatURL} alt="" style={{ width: "350px", height: "300px", marginTop: "20px" }} />
+          return (<div className="col-md-3 img-container">
+           <div className="holder">
+              <img src={image.webformatURL} alt=""
+                style={{ border: "1px solid black", width:"100%", height: "300px", marginTop: "20px" }} />
            <div class="text-block">
              
-             <FaRegThumbsUp /> {image.likes}  <FaRegComment /> {image.comments}
-              <p>
-                      
+             <FaRegThumbsUp />  {image.likes}  &nbsp; <FaRegComment />  {image.comments}
+              <p>                     
                 {image.tags}</p>
-            </div>
+              </div>
+              </div>
           
           </div>)
       
