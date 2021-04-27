@@ -14,20 +14,22 @@ const getImage=(id)=>{
         {data.map((image) => {
 
 
-          return (<div className="col-md-3 img-container">
-           <div className="holder">
-              <img src={image.webformatURL} alt=""
-                onClick={()=>getImage(image.id)}
-                style={{ border: "1px solid black", width:"100%", height: "300px", marginTop: "20px" }} />
-           <div class="text-block">
+          return (
+            <div className="col-md-3">
+                <article className='photo'>
+                    <img src={image.webformatURL} alt="" onClick={() => console.log("clicked")}
+                    />
+                      <div className='photo-info'>
+                          <div>
+                           <strong className="likes"><FaRegThumbsUp />  {image.likes}
+                            &nbsp; &nbsp; <FaRegComment /> {image.comments} </strong>
+                           <h5 className="tags">{image.tags}</h5>
+                          </div>
 
-             <strong><FaRegThumbsUp />  {image.likes}  &nbsp; <FaRegComment />  {image.comments}
-              <p>
-                {image.tags}</p></strong>
-              </div>
-              </div>
-
-          </div>)
+                      </div>
+                </article>
+            </div>
+          )
 
         })}
 
