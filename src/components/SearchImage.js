@@ -10,12 +10,12 @@ const SearchImage = ({dataDisp,dispImgs,getTerm}) => {
    const [data, setData] = useState([])
      dataDisp(data);
      getTerm(term)
-     console.log("searchimage:",data)
+
     const fetchImages = useCallback(async () => {
          try {
           const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true&safesearch=true`);
           const data = await response.json();
-           console.log("The data:", data)
+
            const { hits } = data
            //get hits and store inside setdat which will send it back to dataDisp
            setData(hits)

@@ -14,8 +14,7 @@ function App() {
   const [imgId,setImgId]=useState(0);
   //to get term
   const[term,setTerm]=useState('')
-  console.log("what is term:",term)
-
+ 
   // if image is clicked or not
   const [isClick, setIsClick] = useState(false);
 

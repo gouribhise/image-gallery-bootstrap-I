@@ -2,9 +2,9 @@ import React from 'react'
 import { FaRegComment, FaRegThumbsUp } from 'react-icons/fa'
 
 const DispImages = ({data,imageId,getClick}) => {
-  console.log("what is data",data)
+
 const getImage=(id)=>{
-  console.log("image clicked",id)
+ 
   imageId(id)
   getClick(true)
 }
@@ -17,7 +17,7 @@ const getImage=(id)=>{
           return (
             <div className="col-md-3">
                 <article className='photo'>
-                    <img src={image.webformatURL} alt="" onClick={() => console.log("clicked")}
+                    <img src={image.webformatURL} alt="" onClick={() => getImage(image.id)}
                     />
                       <div className='photo-info'>
                           <div>
