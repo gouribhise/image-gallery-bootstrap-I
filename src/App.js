@@ -5,13 +5,16 @@ import Header from './components/Header'
 import SearchImage from './components/SearchImage'
 import DispImages from './components/DispImages'
 import ShowImg from './components/ShowImg'
- 
+
 function App() {
   //this data will come from searchImage component
   //which we will use to display images in other component
   const [data, setData] = useState([]);
   // get the image id to display
   const [imgId,setImgId]=useState(0);
+  //to get term
+  const[term,setTerm]=useState('')
+  console.log("what is term:",term)
 
   // if image is clicked or not
   const [isClick, setIsClick] = useState(false);
@@ -32,8 +35,9 @@ function App() {
            {/*setisclick to false to load images again*/}
            <SearchImage
                 dataDisp={(data)=>setData(data)}
-                dispImgs={(val)=>setIsClick(val)}/>
-      
+                dispImgs={(val)=>setIsClick(val)}
+                getTerm={(term)=>setTerm(term)}/>
+
       </div>
       {/*if image is clicked display big image else
         show all images in grid*/}
@@ -51,12 +55,13 @@ function App() {
          <div className="row">
 
          {/* send data to dispimages get the clicked image and set isclick to true*/}
-           {data.length >0 ?
+           {data.length >0 && term.length<100?
                      <DispImages data={data} imageId={(id) => setImgId(id)} getClick={(val) => setIsClick(val)} />
              :
-             <div className="alert alert-warning offset-5" style={{marginTop:"30px"}}>
+             <div className="alert alert-warning offset-3" style={{marginTop:"30px"}}>
               <h4 className="alert-heading">Warning!</h4>
              <p className="mb-0">No images found</p>
+             <p>Check spelling & make sure search term is less than 100 characters</p>
            </div>
           }
          </div>

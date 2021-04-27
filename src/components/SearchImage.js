@@ -4,11 +4,12 @@ import {   FaSearch } from 'react-icons/fa'
 const API_KEY = process.env.REACT_APP_PIXABAY_API_KEY
 const url = `https://pixabay.com/api/?key=${API_KEY}`
 
-const SearchImage = ({dataDisp,dispImgs}) => {
+const SearchImage = ({dataDisp,dispImgs,getTerm}) => {
     const [text,setText]=useState('')
    const [term, setTerm] = useState('')
    const [data, setData] = useState([])
      dataDisp(data);
+     getTerm(term)
      console.log("searchimage:",data)
     const fetchImages = useCallback(async () => {
          try {
