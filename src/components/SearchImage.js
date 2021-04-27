@@ -9,6 +9,7 @@ const SearchImage = ({dataDisp,dispImgs}) => {
    const [term, setTerm] = useState('')
    const [data, setData] = useState([])
      dataDisp(data);
+     console.log("searchimage:",data)
     const fetchImages = useCallback(async () => {
          try {
           const response = await fetch(`${url}&q=${term}&image_type=photo&pretty=true&safesearch=true`);
@@ -45,7 +46,7 @@ const SearchImage = ({dataDisp,dispImgs}) => {
                     style={{marginLeft:"20px",
                     paddingRight:"20px",paddingLeft:"20px"}}
               type="submit">
-              
+
               <FaSearch />
               &nbsp;
           Search
